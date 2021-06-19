@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <title>Snippet App</title>
+</head>
+
+<body>
+  <div id="app">
+    <p>{{ message }}</p>
+    <p>{{ message2 }}</p>
+  </div>
+  <button v-on:click="changeMsg">Change</button>
+</body>
+
+<script>
+  new Vue({ // 説明 2.3
+    el: "#app", // 説明 2.4
+    data() { // 説明 2.5
+      return {
+        message: "Hello Vue!",
+        message2: "Hoge"
+      };
+    },
+    mounted() {
+      this.setword();
+    },
+    methods: {
+      setword: function () {
+        this.message = 'Set word';
+      },
+      changeMsg: function () { // 説明 2.13
+        this.message = 'Changed Message';
+      },
+    }
+  });
+</script>
+
+</html>
